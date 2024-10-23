@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Periódico Escolar Moderno</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #e0f7fa, #80deea);
+            color: #333;
+            overflow-x: hidden;
+            animation: backgroundAnimation 10s ease infinite;
+        }
+
+        @keyframes backgroundAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        header {
+            background-color: rgba(0, 102, 204, 0.9);
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            }
+            50% {
+                text-shadow: 2px 2px 8px rgba(255, 255, 0, 0.6);
+            }
+        }
+
+        nav {
+            margin: 20px 0;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2rem;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        nav a::after {
+            content: '';
+            display: block;
+            height: 2px;
+            background: #ffcc00;
+            width: 0;
+            transition: width 0.3s;
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+        }
+
+        nav a:hover {
+            color: #ffcc00;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .article {
+            background: #fff;
+            margin: 15px 0;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.5s forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .article h2 {
+            margin-top: 0;
+            color: #0066cc;
+        }
+
+        .article img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+
+        .article img:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            background-color: rgba(0, 102, 204, 0.9);
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Estilos de botones */
+        .button {
+            display: inline-block;
+            background-color: #ffcc00;
+            color: #1a1a1a;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: background-color 0.3s, transform 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .button:hover {
+            background-color: #ffd54f;
+            transform: scale(1.05);
+        }
+
+        .button::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            transition: transform 0.6s ease;
+            z-index: 0;
+        }
+
+        .button:hover::after {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .button span {
+            position: relative;
+            z-index: 1;
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Periódico Escolar Moderno</h1>
+    <nav>
+        <a href="#noticias">Noticias</a>
+        <a href="#deportes">Deportes</a>
+        <a href="#eventos">Eventos</a>
+        <a href="#cultura">Cultura</a>
+        <a href="#tecnologia">Tecnología</a>
+    </nav>
+</header>
+
+<div class="container">
+
+    <!-- Sección de Noticias -->
+    <div class="article" id="noticias">
+        <h2>Últimas Noticias</h2>
+        <img src="301381-whatsapp-20image-202021-12-30-20at-207-50-18-20pm.jpeg" alt="Noticias">
+        <p>Descubre las últimas novedades y acontecimientos importantes en nuestra comunidad escolar.</p>
+        <a href="#noticias" class="button"><span>Leer más</span></a>
+    </div>
+
+    <!-- Sección de Deportes -->
+    <div class="article" id="deportes">
+        <h2>Deportes</h2>
+        <img src="OIP (5).jpg" alt="Deportes">
+        <p>Entérate de los resultados de los últimos eventos deportivos y logros de nuestros atletas.</p>
+        <a href="#deportes" class="button"><span>Leer más</span></a>
+    </div>
+
+    <!-- Sección de Eventos -->
+    <div class="article" id="eventos">
+        <h2>Eventos Escolares</h2>
+        <img src="OIP (4).jpg" alt="Eventos">
+        <p>Información sobre los próximos eventos y actividades que no te puedes perder.</p>
+        <a href="#eventos" class="button"><span>Leer más</span></a>
+    </div>
+
+    <!-- Sección de Cultura -->
+    <div class="article" id="cultura">
+        <h2>Cultura</h2>
+        <img src="mexican-traditions-02.jpg" alt="Cultura">
+        <p>Explora las actividades culturales que enriquecen nuestra comunidad.</p>
+        <a href="#cultura" class="button"><span>Leer más</span></a>
+    </div>
+
+    <!-- Sección de Tecnología -->
+    <div class="article" id="tecnologia">
+        <h2>Tecnología</h2>
+        <img src="OIP (3).jpg" alt="Tecnología">
+        <p>Mantente informado sobre las innovaciones tecnológicas en el colegio.</p>
+        <a href="#tecnologia" class="button"><span>Leer más</span></a>
+    </div>
+
+</div>
+
+<footer>
+    <p>&copy; 2024 Periódico Escolar - Todos los derechos reservados</p>
+</footer>
+
+</body>
+</html>
